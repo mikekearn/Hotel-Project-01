@@ -15,11 +15,13 @@ protected:
 
 	// *** May not continue this methodology. ***
 	// Transfering each room variable from main to here
-	int stdRmCY = 70;
-	int stdRmSc = 35;
-	int deluxeRm = 15;
-	int pentHoRm = 2;
+	// Const starting count of rooms
+	const int stdRmCY = 70;
+	const int stdRmSc = 35;
+	const int deluxeRm = 15;
+	const int pentHoRm = 2;
 
+	// Const double of room rate (using double in case of maths later)
 	const double stdRmCYPrice = 125.0;
 	const double stdRmScPrice = 145.0;
 	const double deluxeRmPrice = 350.0;

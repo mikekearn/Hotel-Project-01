@@ -141,7 +141,7 @@ void reservations::displayRoomOptions()
 {
 	cout << endl;
 	cout << "     The following rooms are open:\n";
-	cout << "     1. Standard rooms (Courtyard): " << ogRoom.courtyardRoomsCount() << "\t(current price: $" << ogRoom.courtyardPrice() << ")\n";
+	cout << "     1. Standard rooms (Courtyard): " << makeCourtyards.courtyardRoomsCount() << "\t(current price: $" << makeCourtyards.courtyardPrice() << ")\n";
 	cout << "     2. Standard rooms (Scenic): " << ogRoom.scenicRoomsCount() << "   \t(current price: $" << ogRoom.scenicPrice() << ")\n";
 	cout << "     3. Deluxe Suites: " << ogRoom.deluxRoomsCount() << "             \t(current price: $" << ogRoom.deluxePrice() << ")\n";
 	cout << "     4. Penthouse Suites: " << ogRoom.penthouseRoomsCount() << "          \t(current price: $" << ogRoom.penthousePrice() << ")\n";
