@@ -94,6 +94,7 @@ void courtyardRoom::bookRoom()
 	cout << "     You've booked a Standard Courtyard Room!\n";
 	addRoomCount();
 	addCourtyardCount();
+	cout << "     There are " << courtyardRoomsCount() << " rooms left.";
 }
 
 void scenicRoom::bookRoom()

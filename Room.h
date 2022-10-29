@@ -9,7 +9,7 @@ using namespace std;
 // Testing out some options with base classes, inheritence, and derived classes
 class genericRoom
 {
-private:
+protected:
 	// Declare some variables to use
 	int bookedRooms = 0;
 
