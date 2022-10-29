@@ -2,7 +2,11 @@
 
 using namespace std;
 
-void genericRoom::makeRoom()
+void genericRoom::bookRoom()
 {
 	cout << "Some words";
+}
+
+void courtyardRoom::bookRoom()
+{
 }

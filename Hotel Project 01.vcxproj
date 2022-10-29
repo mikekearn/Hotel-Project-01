@@ -141,8 +141,10 @@
   <ItemGroup>
     <ClCompile Include="HotelProject.cpp" />
     <ClCompile Include="Room.cpp" />
+    <ClCompile Include="Reservation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Reservation.h" />
     <ClInclude Include="Room.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
