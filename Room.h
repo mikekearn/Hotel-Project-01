@@ -11,74 +11,90 @@ class genericRoom
 {
 protected:
 	// Declare some variables to use
-	int bookedRooms = 0;
+	int roomsBooked = 0;
 
 	// *** May not continue this methodology. ***
 	// Transfering each room variable from main to here
-	// Const starting count of rooms
-	const int stdRmCY = 70;
-	const int stdRmSc = 35;
-	const int deluxeRm = 15;
-	const int pentHoRm = 2;
-
-	// Const double of room rate (using double in case of maths later)
-	const double stdRmCYPrice = 125.0;
-	const double stdRmScPrice = 145.0;
-	const double deluxeRmPrice = 350.0;
-	const double pentHoRmPrice = 1135.0;
-
-	double totalRoomGross;
+	// ** Moved to public access for const variables **
 
 public:
+	// Const starting count of rooms
+	const int courtyardRoomAmount = 70;
+	const int scenicRoomAmount = 35;
+	const int deluxeRoomAmount = 15;
+	const int penthouseRoomAmount = 2;
+
+	// Const double of room rate (using double in case of maths later)
+	const double courtyardRoomPrice = 125.0;
+	const double scenicRoomPrice = 145.0;
+	const double deluxeRoomPrice = 350.0;
+	const double penthouseRoomPrice = 1135.0;
 
 	const int totalRooms = 122;
 
-	void returnBookedRooms();
 	void bookRoom();
-	void addRoomCount();
-
-	void addCourtyardCount();
-	void addScenicCount();
-	void addDeluxeCount();
-	void addPenthouseCount();
+	
+	// More count functions removed
 
 	int showRoomCount();
 	
-	int courtyardRoomsCount();
-	int scenicRoomsCount();
-	int deluxRoomsCount();
-	int penthouseRoomsCount();
-	
-	double courtyardPrice();
-	double scenicPrice();
-	double deluxePrice();
-	double penthousePrice();
-
-	double totalRevenue();
+	// A lot of functions removed/changed
+	// Each room type subclass should handle things better now
 };
 
+// Each room type has own descendent class from genericRoom
+// All are identitcal except for referencing correct price.
+// I decided to keep prices together in genericRoom parent class for ease of changing and tracking if needed later.
 class courtyardRoom: public genericRoom
 {
+private:
+	double price = genericRoom::courtyardRoomPrice;
+	int roomsBooked = 0;
+
 public:
 	void bookRoom();
+	void addRoomCount();
+	int showRoomCount();
+	double showRoomPrice();
 };
 
 class scenicRoom : public genericRoom
 {
+private:
+	double price = genericRoom::scenicRoomPrice;
+	int roomsBooked = 0;
+
 public:
 	void bookRoom();
+	void addRoomCount();
+	int showRoomCount();
+	double showRoomPrice();
 };
 
 class deluxeRoom : public genericRoom
 {
+private:
+	double price = genericRoom::deluxeRoomPrice;
+	int roomsBooked = 0;
+
 public:
 	void bookRoom();
+	void addRoomCount();
+	int showRoomCount();
+	double showRoomPrice();
 };
 
 class penthouseRoom : public genericRoom
 {
+private:
+	double price = genericRoom::penthouseRoomPrice;
+	int roomsBooked = 0;
+
 public:
 	void bookRoom();
+	void addRoomCount();
+	int showRoomCount();
+	double showRoomPrice();
 };
 
 

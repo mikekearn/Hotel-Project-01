@@ -23,25 +23,35 @@ int main()
 
 	while (userChoice != 3)
 	{
-		cout << endl;
-		cout << "      * HOTEL GRIFFIN BOOKING SOFTWARE *" << endl;
-		cout << "	           (v0.0.2)" << endl;
-		cout << endl;
+		oReservations.displayHeader();
 		cout << endl;
 		cout << "     What would you like to do?\n";
 		cout << "       1. Reserve a room.\n";
 		cout << "       2. View current inventory and total daily revenue.\n";
 		cout << "       3. Exit the program.\n";
 		cout << endl;
-		cout << "     Enter an option: ";
+		cout << "     Please choose an option (1-3): ";
+		// Standardising language throughout program.
+		// cout << "     Enter an option: ";
 		cin >> userString;
+		cin.clear();
+		cin.ignore(1000, '\n');
 		if (userString.length() > 1)
 		{
 			userChoice = 0;
 		}
 		else
 		{
-			userChoice = stoi(userString);
+			try
+			{
+				userChoice = stoi(userString);
+			}
+			catch (invalid_argument)
+			{
+				// Another try catch as in Reservation.cpp for the stoi function to work correctly. Testing various input methods in this program versus last one.
+				// cout << "     That was not a valid input, please try again.";
+				// The cout isn't necessary after testing; default behavior below will catch the error as 'else' option.
+			}
 		}
 
 		if (userChoice == 1)
@@ -50,19 +60,22 @@ int main()
 		}
 		else if (userChoice == 2)
 		{
-			oReservations.displayRoomOptions();
+			oReservations.displayHeader();
+			// oReservations.displayRoomOptions();
+			// Moving these options entirely to room summary for slightly different formatting.
 			oReservations.displayRoomSummary();
 		}
 		else if (userChoice == 3)
 		{
+			// Brief exit message before program quits.
 			cout << endl;
-			cout << "          Thanks for using\n     Hotel Griffin Booking Software.\n          Have a nice day.";
+			cout << "               Thanks for using\n          Hotel Griffin Booking Software.\n               Have a nice day.";
 			cout << endl;
 		}
 		else
 		{
 			cout << endl;
-			cout << "That was not a valid input, please try again.";
+			cout << "     That was not a valid input, please try again.";
 			cout << endl;
 		}
 
